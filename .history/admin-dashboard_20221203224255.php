@@ -26,13 +26,5 @@
             $rowCount = $stmt->rowCount();
             $this -> setStudents($rowCount);
         }
-        function countCourses($pdo){
-            $query = "SELECT * FROM courses";
-            $stmt = $pdo-> prepare($query);
-            $stmt -> execute();
-            $rows = $stmt -> fetchAll();  
-            $rowCount = $stmt->rowCount();
-            $this -> setCourses($rowCount);
-        }
     }
 ?>

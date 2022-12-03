@@ -1,5 +1,5 @@
 <?php
-    include "admin-dashboard.php";
+    include "config.php";
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="header__logo">
-                        <a href="./aHome.php">
+                        <a href="./index.html">
                             <img src="img/lyre.png" alt="" width=62px>
                             <img src="img/lyra.png" alt="" width=150px>
                         </a>
@@ -54,7 +54,7 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./aHome.php">HOME</a></li>
+                                <li class="active"><a href="./index.html">HOME</a></li>
                                 <li ><a href="./courses.html">COURSES</a></li>
                                 <li ><a href="./signup.html">STUDENTS</a></li>
                                 <li class="right"><a href="./signup.html">LOGOUT <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
@@ -98,21 +98,14 @@
                         <div class="icon-section">
                             <i class="icon fa fa-users" aria-hidden="true"></i><br>
                             <h3>STUDENTS</h3>
-                            <?php 
-                                $dash = new Dashboard ();
-                                $dash -> countStudents($pdo)
-                            ?>
-                            <p><?php echo $dash ->getStudents() ?></p>
+                            <p>1</p>
                         </div>
                     </div>
                     <div class="dashboard yellowDash">
                         <div class="icon-section">
                             <i class="icon fa fa-book" aria-hidden="true"></i><br>
                             <h3>COURSES</h3>
-                            <?php 
-                                $dash -> countCourses($pdo)
-                            ?>
-                            <p><?php echo $dash ->getCourses() ?></p>
+                            <p>2</p>
                         </div>
                        
                     </div>

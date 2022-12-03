@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="header__logo">
-                        <a href="./aHome.php">
+                        <a href="./index.html">
                             <img src="img/lyre.png" alt="" width=62px>
                             <img src="img/lyra.png" alt="" width=150px>
                         </a>

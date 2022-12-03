@@ -32,7 +32,7 @@
             $stmt -> execute();
             $rows = $stmt -> fetchAll();  
             $rowCount = $stmt->rowCount();
-            $this -> setCourses($rowCount);
+            $this -> setStudents($rowCount);
         }
     }
 ?>
