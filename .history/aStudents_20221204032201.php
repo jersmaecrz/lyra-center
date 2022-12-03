@@ -10,7 +10,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lyra | Home</title>
+    <title>Lyra | Students</title>
     <link rel="stylesheet" href="css/admin-style.css" type="text/css">
 
     <!-- Google Font -->
@@ -54,9 +54,9 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./aHome.php">HOME</a></li>
+                                <li ><a href="./aHome.php">HOME</a></li>
                                 <li ><a href="./aCourses.php">COURSES</a></li>
-                                <li ><a href="./aStudents.php">STUDENTS</a></li>
+                                <li class="active"><a href="./aStudents.php">STUDENTS</a></li>
                                 <li class="right"><a href="./signup.html">LOGOUT <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                             </ul>
                         </nav>
@@ -71,13 +71,12 @@
 
     
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="img/banner.png">
+    <section class="pg pg-breadcrumb set-bg" data-setbg="img/banner.png">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
                     <div class="normal__breadcrumb__text">
-                        <h2>Welcome</h2>
-                        <div class="lemony"><a><span><b>Admin</b></span</a></div>
+                        <h2><i class="fa fa-users" aria-hidden="true"></i> Students</h2>
                     </div>
                 </div>
             </div>
@@ -90,34 +89,38 @@
 <!-- Dashboard -->
 <div class="container">
     <div class="row">
-            <div class="col-lg-12">
-                <div class="main-section normal__breadcrumb__text">
-                    <div class="dashboard blueDash">
-                        <a href="./aStudents.php">
-                            <div class="icon-section">
-                                <i class="icon fa fa-users" aria-hidden="true"></i><br>
-                                <h3>STUDENTS</h3>
-                                <?php 
-                                    $dash = new Dashboard ();
-                                    $dash -> countStudents($pdo)
-                                ?>
-                                <p><?php echo $dash ->getStudents() ?></p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="dashboard yellowDash">
-                        <a href="./aCourses.php">
-                            <div class="icon-section">
-                                <i class="icon fa fa-book" aria-hidden="true"></i><br>
-                                <h3>COURSES</h3>
-                                <?php 
-                                    $dash -> countCourses($pdo)
-                                ?>
-                                <p><?php echo $dash ->getCourses() ?></p>
-                            </div>
-                        </a>   
-                    </div>
-            </div>
+        <div class="col-lg-7 normal__breadcrumb__text" style="float:none;margin:auto;">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Enrolled Courses</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $student = new Students();
+                        $student -> retrieveStudents($pdo);
+                        $rows = $student -> getStudents();
+                        foreach($rows as $row){
+                            echo "<tr>";
+                            echo "<td>".$row -> username."</td>";
+                            echo "<td>".$row -> name."</td>";
+                            echo "<td>".$row -> email."</td>";
+                            echo "<td><i  class='ico fa fa-ellipsis-h'></i>"."</td>";
+
+                            echo "</tr>";
+
+
+                        }
+                    ?>
+                    <!-- and so on... -->
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <br>

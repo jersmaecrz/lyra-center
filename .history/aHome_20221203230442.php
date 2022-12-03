@@ -1,5 +1,5 @@
 <?php
-    include "admin-classes.php";
+    include "admin-dashboard.php";
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lyra | Home</title>
-    <link rel="stylesheet" href="css/admin-style.css" type="text/css">
+    <link rel="stylesheet" href="css/admin-home-style.css" type="text/css">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
@@ -58,6 +58,8 @@
                                 <li ><a href="./aCourses.php">COURSES</a></li>
                                 <li ><a href="./aStudents.php">STUDENTS</a></li>
                                 <li class="right"><a href="./signup.html">LOGOUT <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+
+
                             </ul>
                         </nav>
                     </div>
@@ -70,7 +72,7 @@
     <!-- Header End -->
 
     
-    <!-- Normal Breadcrumb Begin -->
+      <!-- Normal Breadcrumb Begin -->
     <section class="normal-breadcrumb set-bg" data-setbg="img/banner.png">
         <div class="container">
             <div class="row">
@@ -93,29 +95,26 @@
             <div class="col-lg-12">
                 <div class="main-section normal__breadcrumb__text">
                     <div class="dashboard blueDash">
-                        <a href="./aStudents.php">
-                            <div class="icon-section">
-                                <i class="icon fa fa-users" aria-hidden="true"></i><br>
-                                <h3>STUDENTS</h3>
-                                <?php 
-                                    $dash = new Dashboard ();
-                                    $dash -> countStudents($pdo)
-                                ?>
-                                <p><?php echo $dash ->getStudents() ?></p>
-                            </div>
-                        </a>
+                        <div class="icon-section">
+                            <i class="icon fa fa-users" aria-hidden="true"></i><br>
+                            <h3>STUDENTS</h3>
+                            <?php 
+                                $dash = new Dashboard ();
+                                $dash -> countStudents($pdo)
+                            ?>
+                            <p><?php echo $dash ->getStudents() ?></p>
+                        </div>
                     </div>
                     <div class="dashboard yellowDash">
-                        <a href="./aCourses.php">
-                            <div class="icon-section">
-                                <i class="icon fa fa-book" aria-hidden="true"></i><br>
-                                <h3>COURSES</h3>
-                                <?php 
-                                    $dash -> countCourses($pdo)
-                                ?>
-                                <p><?php echo $dash ->getCourses() ?></p>
-                            </div>
-                        </a>   
+                        <div class="icon-section">
+                            <i class="icon fa fa-book" aria-hidden="true"></i><br>
+                            <h3>COURSES</h3>
+                            <?php 
+                                $dash -> countCourses($pdo)
+                            ?>
+                            <p><?php echo $dash ->getCourses() ?></p>
+                        </div>
+                       
                     </div>
             </div>
     </div>

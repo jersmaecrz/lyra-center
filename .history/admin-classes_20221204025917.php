@@ -35,4 +35,33 @@
             $this -> setCourses($rowCount);
         }
     }
+    class Students {
+        //Attributes
+        public $students;
+        //Create setter
+        function setStudents($students){
+            $this -> students = $students;
+        }
+        //Create getter
+        function getStudents(){
+            return $this -> students;
+        }
+        function countCourses($pdo){
+            $gender = "Female";
+            $query = "SELECT * FROM users WHERE 'user_type' = ?";
+            $stmt = $pdo-> prepare($query);
+            $stmt -> execute([$gender]);
+            $rows = $stmt -> fetchAll();
+            $this ->setStudents($rows);
+    
+          
+        }
+    }
+    $student = new Students();
+    $student -> countCourses($pdo);
+    $student -> getStudents();
+
+
+
+    
 ?>

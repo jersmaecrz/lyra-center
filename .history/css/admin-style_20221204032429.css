@@ -1,0 +1,107 @@
+
+/*			HOME PAGE 			*/
+.right {
+    float: right;
+}
+.scroll {
+    margin-left: -50px;
+    margin-top: -50px;
+}
+.main-section{
+	width:80%;
+	margin:0 auto;
+	text-align: center;
+	padding: 0px 5px;
+}
+.dashboard{
+	width:32%;
+	display: inline-block;
+	color:#fff;
+	margin-top: 50px; 
+}
+.icon-section i{
+	font-size: 30px;
+	padding:10px;
+	border:1px solid #34495E;
+	margin-bottom: 10px;
+    margin: 5%;
+	background-color:#fff;
+    border-radius: 50%;
+}
+.icon-section h3{
+	font-size: 20px;
+    color: #fff;
+	font-family: "Mulish", sans-serif;
+}
+.icon-section p{
+	margin:0px;
+	font-size: 20px;
+	padding-bottom: 10px;
+	font-family: "Mulish", sans-serif;
+}
+.icon {
+    color: #023047;
+}
+.blueDash {
+    background-color:#34495E;
+
+}
+.yellowDash {
+    background-color:#4ACBCB;
+
+}
+.pg-breadcrumb {
+	height: 240px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+/*			STUDENTS PAGE 			*/
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	font-family: "Mulish", sans-serif;
+	width: 600px;
+
+}
+.styled-table thead tr {
+    background-color: #FFDA0E;
+    color: #023047;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+	white-space: nowrap;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4ACBCB;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #34495E;
+}
+.ico {
+	font-size: 24px;
+	margin-left: 10px;
+	align-items: center;
+	color: #4ACBCB;
+}

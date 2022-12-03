@@ -1,5 +1,5 @@
 <?php
-    include "admin-classes.php";
+    include "admin-dashboard.php";
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lyra | Home</title>
-    <link rel="stylesheet" href="css/admin-style.css" type="text/css">
+    <link rel="stylesheet" href="css/admin-home-style.css" type="text/css">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
@@ -104,6 +104,7 @@
                                 <p><?php echo $dash ->getStudents() ?></p>
                             </div>
                         </a>
+
                     </div>
                     <div class="dashboard yellowDash">
                         <a href="./aCourses.php">
