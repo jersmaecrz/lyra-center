@@ -1,0 +1,53 @@
+.right {
+    float: right;
+
+}
+.scroll {
+    margin-left: -50px;
+    margin-top: -50px;
+}
+.main-section{
+	width:80%;
+	margin:0 auto;
+	text-align: center;
+	padding: 0px 5px;
+}
+.dashboard{
+	width:32%;
+	display: inline-block;
+	background-color:#34495E;
+	color:#fff;
+	margin-top: 50px; 
+}
+.icon-section i{
+	font-size: 30px;
+	padding:10px;
+	border-radius:50%;
+	margin-top:-25px;
+	margin-bottom: 10px;
+	background-color:#FFDA0E;
+}
+.icon-section h3{
+	font-size: 30px;
+	color:#fff;
+}
+.icon-section p{
+	margin:0px;
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+.detail-section{
+	background-color: #4ACBCB;
+	padding: 5px 0px;
+}
+.dashbord .detail-section:hover{
+	background-color: #5a5a5a;
+	cursor: pointer;
+}
+.detail-section a{
+	color:#fff;
+	text-decoration: none;
+}
+.icon {
+    color: #34495E;
+}
