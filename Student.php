@@ -44,10 +44,10 @@
 
         // methods
         function register() {
-            $this->db->query("INSERT INTO student (sUsername, sPassword, sEmail) VALUES (:sUsername, :sPassword, :sEmail)");
+            $this->db->query("INSERT INTO student (sUsername, sEmail, sPassword) VALUES (:sUsername, :sEmail, :sPassword)");
             $this->db->bind(":sUsername", $this->sUsername);
-            $this->db->bind(":sPassword", $this->sPassword);
             $this->db->bind(":sEmail", $this->sEmail);
+            $this->db->bind(":sPassword", $this->sPassword);
             $this->db->execute();
         }
     }

@@ -80,7 +80,7 @@
             <h1>
                 Sign Up
             </h1>
-            <form class="container flex-container" action="index.html" method="Post">
+            <form class="container flex-container" action="signup-reg.php" method="Post">
                 <div class="row" style="margin-top: 25px;">
                     <div class="col-lg-2 form-label">
                         <label for="sUsername">Username:</label>
@@ -106,20 +106,8 @@
                     </div>
                 </div>
                 <div class="row col-lg-5 form-button">
-                    <input type="submit" id="sign up" name="sign up" value="Sign Up">
+                    <input type="submit" id="signup" name="signup" value="Sign Up">
                 </div>
-
-                <?php
-                    if(isset($_POST['save'])) {
-                        $p = new Student();
-                        $p->setSUsername($_POST['sUsername']);
-                        $p->setSPassword($_POST['sPassword']);
-                        $p->setSEmail($_POST['sEmail']);
-                        $p->register();
-                
-                        echo "<script>alert('Data saved successfully!'); document.location = 'index.php'</script>";
-                    }
-                ?>
             </form>
         </div>
 
