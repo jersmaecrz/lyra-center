@@ -7,11 +7,13 @@ if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 	print_r($_FILES['my_image']);
 	echo "</pre>";
 
+	$payID = $_POST['payID'];
 	$img_name = $_FILES['my_image']['name'];
 	$img_size = $_FILES['my_image']['size'];
 	$tmp_name = $_FILES['my_image']['tmp_name'];
 	$error = $_FILES['my_image']['error'];
-
+	
+	
 	if ($error === 0) {
 		if ($img_size > 12500000) {
 			$em = "Sorry, your file is too large.";
@@ -28,10 +30,10 @@ if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 				move_uploaded_file($tmp_name, $img_upload_path);
 
 				// Insert into Database
-				$sql = "INSERT INTO images(image_url) 
-				        VALUES('$new_img_name')";
+				$sql = "INSERT INTO `images`(`image_url`, `pytID`) 
+				        VALUES('$new_img_name','$payID')";
 				mysqli_query($conn, $sql);
-				header("Location: view.php");
+				header("Location: sEnrolledCourses.php");
 			}else {
 				$em = "You can't upload files of this type";
 		        header("Location: sIndex.php?error=$em");

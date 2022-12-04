@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lyra | Payment Proof</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
@@ -95,7 +96,11 @@
                                  <form action="upload.php" id="boxx"
                                        method="post" 
                                        enctype="multipart/form-data">
-                                       
+                                       <?php
+                                            if(isset($_GET['id'])){
+                                                echo "<input type='hidden name='payID' value='".$_GET['id']."'>";
+                                            }
+                                       ?>
                                        <br>
                                        <input 
                                               type="file" 
@@ -117,8 +122,12 @@
 <br><br><br>
 
                 <div class="col-lg-12 text-center">
-                        <input type="submit" class ="butones" id="button" value="Back" name="back"></tr>
-                        <input type="submit" class ="butones" id="button" value="Next" name="submit"></tr>
+                    <?php
+                     if(isset($_GET['id'])){
+                        echo "<a  class='butonesTxt butones' href='spaymentscheme.php?id=".filter_var($_GET['id'])."' name='btnNext' id='button' >Back</a></tr>";
+                    }
+
+                    ?>
                 </div>
 <br><br><br><br>
 

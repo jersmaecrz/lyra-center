@@ -62,5 +62,29 @@
             $stmt -> execute([$pytID,$schemeID,$ecID,$method,$bank,$accNo]);
         }
     }        
+    class StudentEnrollment {
+        //Attributes
+        public $enrollment;
+        //Create setter
+        function setEnrollment($enrollment){
+            $this -> enrollment = $enrollment;
+        }
+        //Create getter
+        function getPayment(){
+            return $this -> enrollment;
+        }
+        function retrieveCourse($pdo, $crsID){
+            $query = "SELECT * FROM `enrolled courses` WHERE `crsID` = ?";
+            $stmt = $pdo-> prepare($query);
+            $stmt -> execute([$crsID]);
+            $rows = $stmt -> fetchAll();
+            $this -> setEnrollment($rows);
+        }        
+        function insertEnrollment($pdo, $ecID, $ecStatus,$crsID,$sUsername,$paymentID){
+            $query = "INSERT INTO `enrolled courses`(`ecID`, `ecStatus`, `crsID`, `sUsername`, `paymentID`) VALUES (?,?,?,?,?)";
+            $stmt = $pdo-> prepare($query);
+            $stmt -> execute([$ecID,$ecStatus,$crsID,$sUsername,$paymentID]);
+        }
+    }        
 
 ?>
