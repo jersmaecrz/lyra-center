@@ -101,6 +101,7 @@
                 <div class="row">
                     <div class="col-lg-2 form-label">
                         <label for="sEmail">Email:</label>
+>>>>>>> Stashed changes
                     </div>
                     <div class="row">
                         <div class="col-lg-2 form-label">

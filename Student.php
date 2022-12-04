@@ -7,6 +7,7 @@
         private $sPassword;
         private $sEmail;
         private $db;
+        private $sName;
 
         function __construct() {
             $this->db = new Database();
@@ -23,6 +24,9 @@
 
         function setSEmail($sEmail) {
             $this->sEmail = $sEmail;
+        }
+        function setSName($sName) {
+            $this->sName = $sName;
         }
 
         // getters
@@ -42,11 +46,17 @@
             return $this->sEmail;
         }
 
+        function getSName() {
+            return $this->sName;
+        }
+
         // methods
         function register() {
-            $this->db->query("INSERT INTO student (sUsername, sEmail, sPassword) VALUES (:sUsername, :sEmail, :sPassword)");
+            $this->db->query("INSERT INTO `users` (`username`,`name`, `email`, `user_type`,`password`) VALUES (:sUsername,:sName,:sEmail,:sUserType,:sPassword)");
             $this->db->bind(":sUsername", $this->sUsername);
+            $this->db->bind(":sName", $this->sName);
             $this->db->bind(":sEmail", $this->sEmail);
+            $this->db->bind(":sUserType", 'user');
             $this->db->bind(":sPassword", $this->sPassword);
             $this->db->execute();
         }

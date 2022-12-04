@@ -36,7 +36,37 @@ require 'config.php';
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
   <body>
-
+   <!-- Header Section Begin -->
+   <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="header__logo">
+                        <a href="./aHome.php">
+                            <img src="img/lyre.png" alt="" width=62px>
+                            <img src="img/lyra.png" alt="" width=150px>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li ><a href="./aHome.php">HOME</a></li>
+                                <li  class="active"><a href="./admin-courses.php">COURSES</a></li>
+                                <li><a href="./aStudents.php">STUDENTS</a></li>
+                                <li ><a href="./payschemes.php">PAY SCHEME</a></li>
+                                <li ><a href="./logout.php"> <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
     <div class="container mt-5">
 
        <?php include('message.php'); ?>
@@ -46,7 +76,7 @@ require 'config.php';
                 <div class="card">
                     <div class="card-header">
                         <h4>Courses
-                            <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="aHome.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">

@@ -54,8 +54,9 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
+                                
                                 <li ><a href="./aHome.php">HOME</a></li>
-                                <li ><a href="./aCourses.php">COURSES</a></li>
+                                <li ><a href="./admin-courses.php">COURSES</a></li>
                                 <li class="active"><a href="./aStudents.php">STUDENTS</a></li>
                                 <li ><a href="">PAY SCHEME</a></li>
                                 <li class="right"><a href="./signup.html">LOGOUT <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
