@@ -1,7 +1,17 @@
 <?php
-session_start();
+include "session_checker.php";
 
-require 'config.php';
+$sname = "remotemysql.com";
+$uname = "NsqxjSUDbx";
+$password = "wLgUwnheJo";
+$db_name = "NsqxjSUDbx";
+
+$db = mysqli_connect($sname, $uname, $password, $db_name);
+
+if (!$db) {
+    echo "Connection failed!";
+    exit();
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -52,11 +62,11 @@ require 'config.php';
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li ><a href="./aHome.php">HOME</a></li>
-                                <li  class="active"><a href="./admin-courses.php">COURSES</a></li>
+                                <li><a href="./aHome.php">HOME</a></li>
+                                <li class="active"><a href="./aCourses.php">COURSES</a></li>
                                 <li><a href="./aStudents.php">STUDENTS</a></li>
-                                <li ><a href="./payschemes.php">PAY SCHEME</a></li>
-                                <li ><a href="./logout.php"> <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                                <li><a href="./payschemes.php">PAY SCHEME</a></li>
+                                <li><a href="./logout.php"> <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -76,18 +86,18 @@ require 'config.php';
                 <div class="card">
                     <div class="card-header">
                         <h4>Courses
-                            <a href="aHome.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="aCourses.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">
                         <form action="admin_functions.php" method="POST">
                         <div class="mb-3">
                                 <label>Course ID</label>
-                                <input type="text" name="course_code" class="form-control">
+                                <input type="text" name="crsID" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label>Course Name</label>
-                                <input type="text" name="csrName" class="form-control">
+                                <input type="text" name="crsName" class="form-control">
                             <div class="mb-3">
                                 <label>Price</label>
                                 <input type="text" name="crsPrice" class="form-control">
@@ -98,7 +108,7 @@ require 'config.php';
                             </div>
                             </div>
                                 <label>Description</label>
-                                <input type="text" name="crsDescription" class="form-control">
+                                <input type="text" name="crsDesc" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="save_course" class="btn btn-primary">

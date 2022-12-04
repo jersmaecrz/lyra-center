@@ -1,3 +1,6 @@
+<?php
+    include "session_checker.php";
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -9,6 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Payment Schemes</title>
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
@@ -52,7 +56,7 @@
                             <nav class="header__menu mobile-menu">
                                 <ul>
                                 <li><a href="./aHome.php">HOME</a></li>
-                                <li><a href="./admin-courses.php">COURSES</a></li>
+                                <li><a href="./aCourses">COURSES</a></li>
                                 <li><a href="./aStudents.php">STUDENTS</a></li>
                                 <li class="active"><a href="./payschemes.php">PAY SCHEME</a></li>
                                 <li><a href="./logout.php"> <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
@@ -65,7 +69,18 @@
             </div>
         </header>
         <!-- Header End -->
+        <section class="pg pg-breadcrumb set-bg" data-setbg="img/banner.png">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="normal__breadcrumb__text">
+                        <h2><i class="fa fa-money" aria-hidden="true"></i> Pay Scheme</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+    </section>
         <!-- Content -->
         <div class="container" style="margin-top: 50px">
             <div class="row">

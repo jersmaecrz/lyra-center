@@ -98,10 +98,6 @@
                         <input type="text" id="sName" name="sName"><br>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-2 form-label">
-                        <label for="sEmail">Email:</label>
-                    </div>
                     <div class="row">
                         <div class="col-lg-2 form-label">
                             <label for="sEmail">Email:</label>

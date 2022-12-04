@@ -1,11 +1,22 @@
 <?php
-session_start();
-require 'config.php';
+include "session_checker.php";
 
+// connect to database
+$sname = "remotemysql.com";
+$uname = "NsqxjSUDbx";
+$password = "wLgUwnheJo";
+$db_name = "NsqxjSUDbx";
+
+$db = mysqli_connect($sname, $uname, $password, $db_name);
+
+if (!$db) {
+	echo "Connection failed!";
+	exit();
+}
 if(isset($_POST['delete_course']))
 {
     $course_id = mysqli_real_escape_string($db, $_POST['delete_course']);
-    $query = "DELETE FROM courses WHERE id='$course_id' ";
+    $query = "DELETE FROM courses WHERE crsID='$course_id' ";
     $query_run = mysqli_query($db, $query);
 
     if($query_run)
@@ -56,8 +67,8 @@ if(isset($_POST['save_course']))
     $crsDesc = mysqli_real_escape_string($db, $_POST['crsDesc']);
 
 
-    $query = "INSERT INTO courses (crsName, crsInstructor, crsPrice, crsDesc) VALUES 
-        ('$crsName', '$crsInstructor', '$crsPrice', '$crsDesc')";
+    $query = "INSERT INTO courses (crsID, crsName, crsInstructor, crsPrice, crsDesc) VALUES 
+        ('$crsID','$crsName', '$crsInstructor', '$crsPrice', '$crsDesc')";
 
     $query_run = mysqli_query($db, $query);
     if($query_run)
