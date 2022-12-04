@@ -2,7 +2,7 @@
 session_start();
 
 // connect to database
-$db = mysqli_connect('localhost', 'root', '', 'lyracenter');
+$db = mysqli_connect('localhost', 'root', '', 'NsqxjSUDbx');
 
 // variable declaration
 $username = "";
