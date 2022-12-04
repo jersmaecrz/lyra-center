@@ -150,15 +150,15 @@ function login(){
 			// check if user is admin or user
 			$logged_in_user = mysqli_fetch_assoc($results);
 			if ($logged_in_user['user_type'] == 'admin') {
-
+				$_SESSION['username'] = $username;
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
 				header('location: aHome.php');		  
 			}else{
+				$_SESSION['username'] = $username;
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-
-				header('location: index.html');
+				header('location: sIndex.php');
 			}
 		}else {
 			array_push($errors, "Wrong username/password combination");

@@ -1,0 +1,197 @@
+<?php
+    include "student-classes.php";
+    include "session_checker.php";
+?>
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <link rel="icon" href="img/lyre.png">
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lyra | Home</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder 
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>-->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="header__logo">
+                        <a href="./index.html">
+                            <img src="img/lyre.png" alt="" width=62px>
+                            <img src="img/lyra.png" alt="" width=150px>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                            <li><a href="./sIndex.php">HOME</a></li>
+                                <li  class="active"><a href="./sEnrolledCourses.php">COURSES</a></li>
+                                <?php
+                                    if(isset($_SESSION['user']) ){ 
+                                        echo"<li class='right'><a href='./logout.php'><i class='fa fa-sign-out' aria-hidden='true'></i> LOGOUT</a></li>";
+                                    }else{
+                                        echo"<li><a href='./signup.php'>SIGN UP</a></li>";
+                                        echo"<li class='right'><a href='./login.php'><i class='fa fa-sign-in' aria-hidden='true'></i> LOGIN</a></li>";
+                                    }
+                                ?>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    
+      <!-- Normal Breadcrumb Begin -->
+    <section class="normal-breadcrumb set-bg" data-setbg="img/banner.png" style="height: 300px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="normal__breadcrumb__text">
+                        <h2> Enroll</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Normal Breadcrumb End -->
+<br>
+
+
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="normal__breadcrumb__text" id="setblack">
+                    <?php 
+                    if(isset($_GET['id'])){
+                        $crsID =$_GET['id'];
+
+                         echo "<br><br><h3><b>".$crsID."</h3>";
+                         $course = new Course();
+                         $course -> retrieveCourse($pdo,$crsID);
+                         $rows = $course -> getCourse();
+
+                         foreach($rows as $row){
+                            echo "<br><br><h5><b>".$row-> crsName."</h3></b><br>";
+                            echo "<h6> Instructor: ".$row-> crsInstructor."</h3>";
+                            echo "<h6> Price: ₱ ".$row-> crsPrice."</h3>";
+                            echo "<h6> About Course: ".$row-> crsDesc."</h3>";
+                         }
+                    } 
+                    ?>
+
+                    <div class="a">
+                        <br><h6 align="justify">Click next to continue.</h6>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="col-lg-12 text-center">
+    <?php
+    if(isset($_GET['id'])){
+        echo "<button type='submit' class='butones' name='btnNext' id='button' href='spaymentscheme.php?'>Next</button></tr>";
+        if(isset(btnNext)){
+            header(spaymentscheme.php)
+        }
+    }
+    ?>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<!-- Footer Section Begin -->
+<footer class="footer">
+    <div class="page-up">
+        <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer__logo">
+                    <a href="./index.html">
+                        <img src="img/mango manga.png" alt="" width=80px>
+                        <img src="img/mm.png" alt="" width=110px>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="footer__nav">
+                    <ul>
+                        <li class="active"><a href="./index.html">HOME</a></li>
+                        <li><a href="./courses.html">COURSES</a></li>
+                        <li><a href="./signup.html">SIGN UP</a></li>
+                        <li><a href="./login.html">LOG IN</a></li>
+                    </ul>
+                </div>
+            </div>
+
+          </div>
+      </div>
+  </footer>
+  <!-- Footer Section End -->
+
+
+<!-- Js Plugins -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/player.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/mixitup.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+
+
+</body>
+
+</html>
