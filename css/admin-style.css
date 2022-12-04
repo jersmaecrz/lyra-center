@@ -68,10 +68,9 @@
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	font-family: "Mulish", sans-serif;
-	width: 600px;
+	width: 50%;
 
 }
 .styled-table thead tr {
@@ -104,4 +103,16 @@
 	margin-left: 50px;
 	align-content: center;
 	color: #4ACBCB;
+}
+/*			STUDENT'S ENROLLED COURSES PAGE 			*/
+.banner-text {
+	font-size: 50px !important;
+}
+
+/* Hidden placeholder */
+.save-button {
+	color: #f3f3f3;
+	background: #023047;
+	border-radius: 5px;
+	margin: 5px;
 }

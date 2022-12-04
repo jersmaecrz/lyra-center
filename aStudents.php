@@ -110,7 +110,7 @@
                             echo "<td>".$row -> username."</td>";
                             echo "<td>".$row -> name."</td>";
                             echo "<td>".$row -> email."</td>";
-                            echo "<td><a class= 'ico' href='aEnrolledCourses.php?id=".filter_var($row -> id)."'><i class='fa fa-ellipsis-h'></i>"."</a></td>";
+                            echo "<td><a class= 'ico' href='aEnrolledCourses.php?uname=".filter_var($row -> username)."'><i class='fa fa-ellipsis-h'></i>"."</a></td>";
                             echo "</tr>";
                         }
                     ?>

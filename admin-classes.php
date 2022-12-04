@@ -57,5 +57,42 @@
             $this -> setStudents($rows);
         }
     }
-    
+    class StudentCourse {
+        //Attributes
+        public $studentUsername;
+        public $courses;
+        public $status;
+        //Create setter
+        function setStudentUsername($studentUsername){
+            $this -> studentUsername = $studentUsername;
+        }
+        function setCourses($courses){
+            $this -> courses = $courses;
+        }
+        //Create getter
+        function getStudentUsername(){
+            return $this -> studentUsername;
+        }
+        function getCourses(){
+            return $this -> courses;
+        }
+        function retrieveStudentCourses($pdo){
+            $id = $this-> getStudentUsername();
+            $query = "SELECT * FROM `enrolled courses` JOIN `courses` WHERE `sUsername` = ?";
+            $stmt = $pdo-> prepare($query);
+            $stmt -> execute([$id]);
+            $rows = $stmt -> fetchAll();
+            $this -> setCourses($rows);
+        }
+        function updateEnrollmentStatus($pdo, $ecID, $status){
+            $query = "UPDATE `enrolled courses` SET `ecStatus` = ? WHERE `ecID` = ?";
+            $stmt = $pdo-> prepare($query);
+            $stmt -> execute([$status,$ecID]);
+            echo "Successfully Updated.";
+            echo "<script>
+                window.location.replace('aEnrolledCourses.php?uname=".filter_var($_GET['uname'])."');
+            </script>"; 
+             
+        }
+    }        
 ?>
