@@ -165,9 +165,14 @@
 		font-size: 20px;
 }
 .addBtn{
-	background: #FFDA0E;
+	background-color: #c9e6f3;
 	font-size: 20px;
 	padding: 7px;
 	border-radius: 7px;
 	color: #023047;
+}
+.addBtn:hover {
+	color: #023047;
+	background: #FFDA0E;
+
 }

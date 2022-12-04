@@ -101,7 +101,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>
-                            <a href="admin-courses.php" class="addBtn float-end">Add Courses</a>
+                            <a href="admin-courses.php" class="addBtn float-end">Add</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -137,7 +137,10 @@
                                                     <a href="courses_view.php?id=<?= filter_var($course['crsID']) ?>" name="displayCourse" class="btn btn-info btn-sm">View</a>
                                                     <a href="courses_edit.php?id=<?= filter_var($course['crsID']) ?>" name="editCourse" class="btn btn-success btn-sm">Edit</a>
                                                     <form action="admin_functions.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="deleteCourse" value="<?=$course['crsID'];?>" class="btn btn-danger btn-sm">Delete</a>
+                                                        <?php
+                                                            echo "<input type='hidden' name='crsID' value='".$course['crsID']."' >";
+                                                        ?>
+                                                        <input type="submit" name="deleteCourse" value="Delete" class="btn btn-danger btn-sm">
                                                     </form>
                                             </tr>
                                             <?php
