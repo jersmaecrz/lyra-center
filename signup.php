@@ -61,9 +61,10 @@
                         <div class="header__nav">
                             <nav class="header__menu mobile-menu">
                                 <ul>
-                                    <li class="active"><a href="./index.html">HOME</a></li>
-                                    <li ><a href="./courses.html">COURSES</a></li>
-                                    <li ><a href="./signup.php">SIGN UP</a></li>
+                                    <li><a href="./index.html">HOME</a></li>
+                                    <li><a href="./courses.html">COURSES</a></li>
+                                    <li><a href="./payschemes.php">PAYMENT</a></li>
+                                    <li class="active"><a href="./signup.php">SIGN UP</a></li>
                                     <li><a href="./login.html">LOG IN</a></li>
                                 </ul>
                             </nav>
@@ -76,39 +77,41 @@
         <!-- Header End -->
 
         <!-- Content Start -->
-        <div class="signup">
-            <h1>
-                Sign Up
-            </h1>
-            <form class="container flex-container" action="signup-reg.php" method="Post">
-                <div class="row" style="margin-top: 25px;">
-                    <div class="col-lg-2 form-label">
-                        <label for="sUsername">Username:</label>
+        <div class="container" style="margin-top: 50px">
+            <div class="row">
+                <div class="normal__breadcrumb__text">
+                    <p>Sign Up</p>
+                    <form class="container flex-container" action="signup-reg.php" method="Post">
+                    <div class="row" style="margin-top: 25px;">
+                        <div class="col-lg-2 form-label">
+                            <label for="sUsername">Username:</label>
+                        </div>
+                        <div class="col-lg-3 form-input">
+                            <input type="text" id="sUsername" name="sUsername"><br>
+                        </div>
                     </div>
-                    <div class="col-lg-3 form-input">
-                        <input type="text" id="sUsername" name="sUsername"><br>
+                    <div class="row">
+                        <div class="col-lg-2 form-label">
+                            <label for="sEmail">Email:</label>
+                        </div>
+                        <div class="col-lg-3 form-input">
+                            <input type="text" id="sEmail" name="sEmail"><br>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="col-lg-2 form-label">
+                            <label for="sPassword">Password:</label>
+                        </div>
+                        <div class="col-lg-3 form-input">
+                            <input type="password" id="sPassword" name="sPassword"><br>
+                        </div>
+                    </div>
+                    <div class="row col-lg-5 form-button">
+                        <input type="submit" id="signup" name="signup" value="Sign Up">
+                    </div>
+                    </form>
                 </div>
-                <div class="row">
-                    <div class="col-lg-2 form-label">
-                        <label for="sEmail">Email:</label>
-                    </div>
-                    <div class="col-lg-3 form-input">
-                        <input type="text" id="sEmail" name="sEmail"><br>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-2 form-label">
-                        <label for="sPassword">Password:</label>
-                    </div>
-                    <div class="col-lg-3 form-input">
-                        <input type="password" id="sPassword" name="sPassword"><br>
-                    </div>
-                </div>
-                <div class="row col-lg-5 form-button">
-                    <input type="submit" id="signup" name="signup" value="Sign Up">
-                </div>
-            </form>
+            </div>
         </div>
 
         <!-- Footer Section Begin -->

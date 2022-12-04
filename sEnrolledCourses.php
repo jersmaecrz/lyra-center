@@ -102,7 +102,6 @@
                 <thead>
                     <tr>
                         <th>Course</th>
-                        <th>Name</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -120,8 +119,7 @@
                             foreach($rows as $row) {
                                 echo "<tr>";
                                 echo "<td>".$row->crsID."</td>";
-                                echo "<td>".$row->crsName."</td>";
-                                echo "<td>";
+                                echo "</tr>";
                             }        
                         // }                      
                     ?>

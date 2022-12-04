@@ -8,7 +8,7 @@
         <meta name="keywords" content="Anime, unica, creative, html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Lyra | Sign Up</title>
+        <title>Payment Schemes</title>
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
@@ -51,9 +51,10 @@
                         <div class="header__nav">
                             <nav class="header__menu mobile-menu">
                                 <ul>
-                                    <li class="active"><a href="./index.html">HOME</a></li>
-                                    <li ><a href="./courses.html">COURSES</a></li>
-                                    <li ><a href="./signup.php">SIGN UP</a></li>
+                                    <li><a href="./index.html">HOME</a></li>
+                                    <li><a href="./courses.html">COURSES</a></li>
+                                    <li class="active"><a href="./payschemes.php">PAYMENT</a></li>
+                                    <li><a href="./signup.php">SIGN UP</a></li>
                                     <li><a href="./login.html">LOG IN</a></li>
                                 </ul>
                             </nav>
@@ -65,33 +66,40 @@
         </header>
         <!-- Header End -->
 
-        <!-- Content Start -->
-        <table>
-            <thead>
-                <tr>
-                    <th>Scheme ID</th>
-                    <th>Method</th>
-                    <th>Bank</th>
-                    <th>Account No</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                    require_once("PaymentScheme.php");
-                    $payscheme = new PaymentScheme();
-                    $schemes = $payscheme->getPaymentSchemes();
-                    foreach($schemes as $scheme) { ?>
-                        <tr>
-                            <td><?php echo $scheme->schemeID;?></td>
-                            <td><?php echo $scheme->method;?></td>
-                            <td><?php echo $scheme->bank;?></td>
-                            <td><?php echo $scheme->acctNo;?></td>
-                        </tr>
-                    <?php
-                    }
-                ?>
-            </tbody>
-        </table>
+        <!-- Content -->
+        <div class="container" style="margin-top: 50px">
+            <div class="row">
+                <div class="normal__breadcrumb__text" style="float:none;margin:auto;">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Method</th>
+                                <th>Bank</th>
+                                <th>Account No</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                                require_once("PaymentScheme.php");
+                                $payscheme = new PaymentScheme();
+                                $schemes = $payscheme->getPaymentSchemes();
+                                
+                                foreach($schemes as $scheme) { ?>
+                                    <tr>
+                                        <td style="padding: 10px"><?php echo $scheme->schemeID;?></td>
+                                        <td style="padding: 10px"><?php echo $scheme->method;?></td>
+                                        <td style="padding: 10px"><?php echo $scheme->bank;?></td>
+                                        <td style="padding: 10px"><?php echo $scheme->acctNo;?></td>
+                                    </tr>
+                                <?php
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
         <!-- Js Plugins -->
         <script src="js/jquery-3.3.1.min.js"></script>

@@ -35,7 +35,7 @@
 
         // methods
         function getCourseByStudent($sUsername) {
-            $this->db->query("SELECT * FROM 'enrolled courses' WHERE sUsername = :sUsername");
+            $this->db->query("SELECT * FROM `enrolled courses` WHERE sUsername = :sUsername");
             $this->db->bind(":sUsername", $sUsername);
             return $this->db->resultSet();
         }

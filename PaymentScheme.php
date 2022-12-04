@@ -40,7 +40,7 @@
 
         // methods
         function getPaymentSchemes() {
-            $this->db->query("SELECT * FROM 'payment scheme'");
+            $this->db->query("SELECT * FROM `payment scheme`");
             return $this->db->resultSet();
         }
     }

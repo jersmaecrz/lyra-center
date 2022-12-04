@@ -95,11 +95,11 @@
             </script>"; 
         }
         function getCourseByStudent($pdo, $studentUsername) {
-            $query = "SELECT * FROM 'enrolled courses' WHERE sUsername = ?";
+            $query = "SELECT * FROM `enrolled courses` WHERE `sUsername` = ?";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$studentUsername]);
-            $rows = $stmt -> fetchAll();
-            $this -> setCourses($rows);
+            return $rows = $stmt -> fetchAll();
+            // $this -> setCourses($rows);
         }
     }
     class StudentPayment {
