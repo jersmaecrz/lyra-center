@@ -2,8 +2,17 @@
 session_start();
 
 // connect to database
-$db = mysqli_connect('localhost', 'root', '', 'NsqxjSUDbx');
+$sname = "remotemysql.com";
+$uname = "NsqxjSUDbx";
+$password = "wLgUwnheJo";
+$db_name = "NsqxjSUDbx";
 
+$db = mysqli_connect($sname, $uname, $password, $db_name);
+
+if (!$db) {
+	echo "Connection failed!";
+	exit();
+}
 // variable declaration
 $username = "";
 $email    = "";
@@ -144,7 +153,7 @@ function login(){
 
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: admin.php');		  
+				header('location: aHome.php');		  
 			}else{
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
