@@ -16,6 +16,7 @@
 .dashboard{
 	width:32%;
 	display: inline-block;
+	color:#fff;
 	margin-top: 50px; 
 }
 .icon-section i{
@@ -43,15 +44,11 @@
 }
 .blueDash {
     background-color:#34495E;
+
 }
 .yellowDash {
     background-color:#c9e6f3;
-}
-.yellowDash h3, .yellowDash p{
-	color: #34495E;
-}
-.blueDash p, .blueDash h3{
-	color:#fff;
+
 }
 .pg-breadcrumb {
 	height: 240px;
@@ -74,7 +71,6 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	font-family: "Mulish", sans-serif;
 	width: 50%;
-	margin-bottom: 20px;
 
 }
 .styled-table thead tr {

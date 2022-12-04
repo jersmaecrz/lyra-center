@@ -145,7 +145,8 @@
                                 echo "</select></td>";
                                 echo "<td><input type='submit' value='SAVE' class='save-button' name='btnSubmit'>"; 
                                 echo "</form></td>";
-                                echo "<td><a  class='save-button btnLink' href='aPayment.php?ecID=".filter_var($row -> ecID)."'>VIEW"."</a></td>";
+                                echo "<td><a  class='save-button btnLink' href='aPayment.php?'>VIEW"."</a></td>";
+
                                 echo "</tr>";
                             }        
                         }  

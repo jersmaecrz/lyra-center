@@ -10,7 +10,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lyra | Enrolled Courses</title>
+    <title>Lyra | Payment Details</title>
     <link rel="stylesheet" href="css/admin-style.css" type="text/css">
 
     <!-- Google Font -->
@@ -76,7 +76,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="banner-text normal__breadcrumb__text">
-                        <h2></i> Enrolled Courses</h2>
+                        <h2></i> Payment Details</h2>
                             <?php
                                 if(isset($_GET['uname'])){
                                     echo "<div class='lemony'><a><span><b>";
@@ -145,7 +145,8 @@
                                 echo "</select></td>";
                                 echo "<td><input type='submit' value='SAVE' class='save-button' name='btnSubmit'>"; 
                                 echo "</form></td>";
-                                echo "<td><a  class='save-button btnLink' href='aPayment.php?ecID=".filter_var($row -> ecID)."'>VIEW"."</a></td>";
+                                echo "<td><a  class='save-button btnLink' href='aPayment.php?'>VIEW"."</a></td>";
+
                                 echo "</tr>";
                             }        
                         }  

@@ -98,20 +98,27 @@
     class StudentPayment {
         //Attributes
         public $payments;
+
         //Create setter
-        function setPayments($payments){
-            $this -> payments = $payments;
+        function setStudentUsername($studentUsername){
+            $this -> studentUsername = $studentUsername;
+        }
+        function setCourses($courses){
+            $this -> courses = $courses;
         }
         //Create getter
-        function getPayments(){
-            return $this -> payments;
+        function getStudentUsername(){
+            return $this -> studentUsername;
+        }
+        function getCourses(){
+            return $this -> courses;
         }
         function retrieveStudentPayments($pdo, $ecID){
-            $query = "SELECT * FROM `payment` WHERE `ecID` = ?";
+            $query = "SELECT * FROM `payments` WHERE `ecID` = ?";
             $stmt = $pdo-> prepare($query);
             $stmt -> execute([$ecID]);
             $rows = $stmt -> fetchAll();
-            $this -> setPayments($rows);
+            $this -> setCourses($rows);
         }
     }        
 ?>

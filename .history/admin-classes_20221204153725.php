@@ -100,14 +100,14 @@
         public $payments;
         //Create setter
         function setPayments($payments){
-            $this -> payments = $payments;
+            $this -> studentUsername = $payments;
         }
         //Create getter
         function getPayments(){
             return $this -> payments;
         }
         function retrieveStudentPayments($pdo, $ecID){
-            $query = "SELECT * FROM `payment` WHERE `ecID` = ?";
+            $query = "SELECT * FROM `payments` WHERE `ecID` = ?";
             $stmt = $pdo-> prepare($query);
             $stmt -> execute([$ecID]);
             $rows = $stmt -> fetchAll();

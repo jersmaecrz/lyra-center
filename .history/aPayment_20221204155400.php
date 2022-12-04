@@ -10,7 +10,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lyra | Enrolled Courses</title>
+    <title>Lyra | Payment Details</title>
     <link rel="stylesheet" href="css/admin-style.css" type="text/css">
 
     <!-- Google Font -->
@@ -76,7 +76,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="banner-text normal__breadcrumb__text">
-                        <h2></i> Enrolled Courses</h2>
+                        <h2></i> Payment Details</h2>
                             <?php
                                 if(isset($_GET['uname'])){
                                     echo "<div class='lemony'><a><span><b>";
@@ -98,66 +98,18 @@
 <div class="container">
     <div class="row">
         <div class="normal__breadcrumb__text" style="float:none;margin:auto;">
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th>Course</th>
-                        <th>Name</th>
-                        <th>Instructor</th>
-                        <th>Price</th>
-                        <th>Status</th>
-                        <th></th>
-                        <th>Payment</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        $studentCourse = new StudentCourse();
-                        if(isset($_GET['uname'])){
-                            $uname = $_GET['uname'];
-                            $studentCourse -> setStudentUsername($uname);
-                            $studentCourse -> retrieveStudentCourses($pdo);
-                            $rows = $studentCourse -> getCourses();
-                            foreach($rows as $row){
-                                echo "<tr>";
-                                echo "<td>".$row -> crsID."</td>";
-                                echo "<td>".$row -> crsName."</td>";
-                                echo "<td>".$row -> crsInstructor."</td>";
-                                echo "<td>".$row -> crsPrice."</td>";
-                                echo "<td>";
-                                echo "<form action='' method='post'>";
-                                echo "<input type='hidden' name='ecID' value='".$row -> ecID."'>";
-                                echo "<select name='status' required>";
-                                if($row -> ecStatus == 'pending'){
-                                    echo "<option value='pending' selected>Pending</option>";
-                                    echo "<option value='active'>Active</option>";
-                                    echo "<option value='inactive'>Inactive</option>";
-                                }elseif ($row -> ecStatus == 'active'){
-                                    echo "<option value='active' selected>Active</option>";
-                                    echo "<option value='pending'>Pending</option>";
-                                    echo "<option value='inactive'>Inactive</option>";
-                                }else{
-                                    echo "<option value='inactive' selected>Inactive</option>";
-                                    echo "<option value='pending'>Pending</option>";
-                                    echo "<option value='active'>Active</option>";
-                                }
-                                echo "</select></td>";
-                                echo "<td><input type='submit' value='SAVE' class='save-button' name='btnSubmit'>"; 
-                                echo "</form></td>";
-                                echo "<td><a  class='save-button btnLink' href='aPayment.php?ecID=".filter_var($row -> ecID)."'>VIEW"."</a></td>";
-                                echo "</tr>";
-                            }        
-                        }  
-                        if(isset($_POST['btnSubmit']) && isset($_POST['status']) && isset($_POST['ecID'])){
-                            $status = $_POST['status'];
-                            $ecID = $_POST['ecID'];
-                            $studentCourse -> updateEnrollmentStatus($pdo,$ecID,$status);
-                        }                              
-                    ?>
-
-                </tbody>
-            </table>
+           <div>
+            <?php
+                $sPayment = new StudentPayment();
+                if(isset($_GET['ecID'])){
+                    $ecID = $_GET['ecID'];
+                    $sPayment -> retrieveStudentPayments($pdo,$ecID);
+                    $row = $sPayment -> getPayments();
+                    echo "<h1></h1>"
+                }
+            ?>
+            <img src=""/>
+           </div>
         </div>
     </div>
 </div>

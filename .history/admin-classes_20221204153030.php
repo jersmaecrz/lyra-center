@@ -97,21 +97,40 @@
     }
     class StudentPayment {
         //Attributes
-        public $payments;
+        public $studentUsername;
+        public $courses;
+        public $status;
         //Create setter
-        function setPayments($payments){
-            $this -> payments = $payments;
+        function setStudentUsername($studentUsername){
+            $this -> studentUsername = $studentUsername;
+        }
+        function setCourses($courses){
+            $this -> courses = $courses;
         }
         //Create getter
-        function getPayments(){
-            return $this -> payments;
+        function getStudentUsername(){
+            return $this -> studentUsername;
         }
-        function retrieveStudentPayments($pdo, $ecID){
-            $query = "SELECT * FROM `payment` WHERE `ecID` = ?";
+        function getCourses(){
+            return $this -> courses;
+        }
+        function retrieveStudentCourses($pdo){
+            $id = $this-> getStudentUsername();
+            $query = "SELECT * FROM `enrolled courses` JOIN `courses` WHERE `sUsername` = ?";
             $stmt = $pdo-> prepare($query);
-            $stmt -> execute([$ecID]);
+            $stmt -> execute([$id]);
             $rows = $stmt -> fetchAll();
-            $this -> setPayments($rows);
+            $this -> setCourses($rows);
+        }
+        function updateEnrollmentStatus($pdo, $ecID, $status){
+            $query = "UPDATE `enrolled courses` SET `ecStatus` = ? WHERE `ecID` = ?";
+            $stmt = $pdo-> prepare($query);
+            $stmt -> execute([$status,$ecID]);
+            echo "Successfully Updated.";
+            echo "<script>
+                window.location.replace('aEnrolledCourses.php?uname=".filter_var($_GET['uname'])."');
+            </script>"; 
+             
         }
     }        
 ?>
