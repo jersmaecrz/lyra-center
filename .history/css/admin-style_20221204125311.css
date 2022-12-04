@@ -27,6 +27,7 @@
     margin: 5%;
 	background-color:#fff;
     border-radius: 50%;
+	align-items: center;
 }
 .icon-section h3{
 	font-size: 20px;
@@ -74,10 +75,7 @@
 
 }
 .styled-table thead tr {
-	background-color: #c9e6f3;
-	
-	/*background-color: #FFDA0E;*/
-
+    background-color: #FFDA0E;
     color: #023047;
     text-align: left;
 }
@@ -106,19 +104,16 @@
 	margin-left: 50px;
 	align-content: center;
 	color: #4ACBCB;
-	align-items: center;
 }
 /*			STUDENT'S ENROLLED COURSES PAGE 			*/
 .banner-text {
 	font-size: 50px !important;
 }
+
 /* Hidden placeholder */
 .save-button {
 	color: #f3f3f3;
 	background: #023047;
 	border-radius: 5px;
 	margin: 5px;
-}
-.btnLink {
-	padding: 5px;
 }

@@ -97,7 +97,7 @@
 <!-- Dashboard -->
 <div class="container">
     <div class="row">
-        <div class="normal__breadcrumb__text" style="float:none;margin:auto;">
+        <div class="col-lg-10 normal__breadcrumb__text" style="float:none;margin:auto;">
             <table class="styled-table">
                 <thead>
                     <tr>

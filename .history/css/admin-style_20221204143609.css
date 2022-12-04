@@ -74,10 +74,7 @@
 
 }
 .styled-table thead tr {
-	background-color: #c9e6f3;
-	
-	/*background-color: #FFDA0E;*/
-
+    background-color: #8ECAE6;
     color: #023047;
     text-align: left;
 }

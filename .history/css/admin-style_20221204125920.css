@@ -74,10 +74,7 @@
 
 }
 .styled-table thead tr {
-	background-color: #c9e6f3;
-	
-	/*background-color: #FFDA0E;*/
-
+    background-color: #FFDA0E;
     color: #023047;
     text-align: left;
 }
@@ -121,4 +118,8 @@
 }
 .btnLink {
 	padding: 5px;
+}
+.center {
+	float:none;
+	margin:auto;
 }

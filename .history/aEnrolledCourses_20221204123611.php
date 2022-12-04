@@ -97,7 +97,7 @@
 <!-- Dashboard -->
 <div class="container">
     <div class="row">
-        <div class="normal__breadcrumb__text" style="float:none;margin:auto;">
+        <div class="col-lg-10 normal__breadcrumb__text" style="float:none;margin:auto;">
             <table class="styled-table">
                 <thead>
                     <tr>
@@ -106,9 +106,9 @@
                         <th>Instructor</th>
                         <th>Price</th>
                         <th>Status</th>
-                        <th></th>
                         <th>Payment</th>
 
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -145,8 +145,6 @@
                                 echo "</select></td>";
                                 echo "<td><input type='submit' value='SAVE' class='save-button' name='btnSubmit'>"; 
                                 echo "</form></td>";
-                                echo "<td><a  class='save-button btnLink' href='aEnrolledCourses.php?'>VIEW"."</a></td>";
-
                                 echo "</tr>";
                             }        
                         }  

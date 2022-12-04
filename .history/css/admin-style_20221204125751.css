@@ -74,10 +74,7 @@
 
 }
 .styled-table thead tr {
-	background-color: #c9e6f3;
-	
-	/*background-color: #FFDA0E;*/
-
+    background-color: #FFDA0E;
     color: #023047;
     text-align: left;
 }
@@ -107,11 +104,13 @@
 	align-content: center;
 	color: #4ACBCB;
 	align-items: center;
+
 }
 /*			STUDENT'S ENROLLED COURSES PAGE 			*/
 .banner-text {
 	font-size: 50px !important;
 }
+
 /* Hidden placeholder */
 .save-button {
 	color: #f3f3f3;
@@ -120,5 +119,6 @@
 	margin: 5px;
 }
 .btnLink {
+
 	padding: 5px;
 }
