@@ -1,0 +1,16 @@
+.enroll{
+    background: #FFDA0E;
+	color: black;
+    width: 40%;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-family: "Mulish", sans-serif;
+    font-size: 14;
+}
+.enroll a {
+    color: black;
+
+
+}

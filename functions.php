@@ -2,7 +2,11 @@
 session_start();
 
 // connect to database
-$db = mysqli_connect('localhost', 'root', '', 'NsqxjSUDbx');
+$host = "remotemysql.com";
+$user = "NsqxjSUDbx";
+$password = "wLgUwnheJo";
+$dbName = "NsqxjSUDbx" ;
+$db = mysqli_connect('remotemysql.com', 'NsqxjSUDbx', 'wLgUwnheJo', 'NsqxjSUDbx');
 
 // variable declaration
 $username = "";

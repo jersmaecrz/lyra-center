@@ -1,0 +1,19 @@
+.enroll{
+    background: #FFDA0E;
+	color: black;
+    width: 170px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+    font-size: 14;
+}
+.enroll a:hover {
+    color: white;
+    background-color: #c9e6f3;
+}
+.enroll a {
+    color: black;
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+}
