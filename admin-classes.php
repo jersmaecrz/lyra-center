@@ -1,5 +1,6 @@
 <?php
    require_once("config.php");
+
    class Dashboard {
         //Attributes
         public $name;
@@ -92,7 +93,13 @@
             echo "<script>
                 window.location.replace('aEnrolledCourses.php?uname=".filter_var($_GET['uname'])."');
             </script>"; 
-             
+        }
+        function getCourseByStudent($pdo, $studentUsername) {
+            $query = "SELECT * FROM 'enrolled courses' WHERE sUsername = ?";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$studentUsername]);
+            $rows = $stmt -> fetchAll();
+            $this -> setCourses($rows);
         }
     }
     class StudentPayment {
