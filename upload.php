@@ -33,7 +33,10 @@ if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 				$sql = "INSERT INTO `images`(`image_url`, `pytID`) 
 				        VALUES('$new_img_name','$payID')";
 				mysqli_query($conn, $sql);
-				header("Location: sEnrolledCourses.php");
+				echo "<script>
+						window.location.replace('sEnrolledCourses.php');
+		   			</script>";
+				//header("Location: sEnrolledCourses.php");
 			}else {
 				$em = "You can't upload files of this type";
 		        header("Location: sIndex.php?error=$em");

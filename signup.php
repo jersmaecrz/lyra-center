@@ -139,10 +139,16 @@
                     <div class="col-lg-6">
                         <div class="footer__nav">
                             <ul>
-                                <li class="active"><a href="./index.html">HOME</a></li>
-                                <li><a href="./courses.html">COURSES</a></li>
-                                <li><a href="./signup.html">SIGN UP</a></li>
-                                <li><a href="./login.html">LOG IN</a></li>
+                            <li class="active"><a href="./sIndex.php">HOME</a></li>
+                                <li><a href="./sEnrolledCourses.php">COURSES</a></li>
+                                <?php
+                                    if(isset($_SESSION['user']) ){ 
+                                        echo"<li><a href='./logout.php'><i class='fa fa-sign-out' aria-hidden='true'></i> LOGOUT</a></li>";
+                                    }else{
+                                        echo"<li><a href='./signup.php'>SIGN UP</a></li>";
+                                        echo"<li><a href='./login.php'><i class='fa fa-sign-in' aria-hidden='true'></i> LOGIN</a></li>";
+                                    }
+                                ?>
                             </ul>
                         </div>
                     </div>
