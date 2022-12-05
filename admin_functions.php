@@ -34,15 +34,21 @@ if(isset($_POST['deleteCourse']) && isset($_POST['crsID'])){
 
 if(isset($_POST['update_course']))
 {
+    
     $crsID = mysqli_real_escape_string($db, $_POST['crsID']);
     $crsName = mysqli_real_escape_string($db, $_POST['crsName']);
     $crsInstructor = mysqli_real_escape_string($db, $_POST['crsInstructor']);
     $crsPrice = mysqli_real_escape_string($db, $_POST['crsPrice']);
     $crsDesc = mysqli_real_escape_string($db, $_POST['crsDesc']);
+    echo $crsID;
+    echo $crsName;
+    echo $crsInstructor;
+    echo $crsPrice;
+    echo $crsDesc;
 
-    $query = "UPDATE courses SET crsName ='$crsName', crsInstructor='$crsInstructor', csrPrice='$crsPrice', csrDesc='$crsDesc' WHERE id='$crsID' ";
+    $query = "UPDATE `courses` SET `crsID`='$crsID', `crsName` ='$crsName', `crsInstructor`='$crsInstructor', `crsPrice`=$crsPrice, `crsDesc`='$crsDesc' WHERE `crsID`='$crsID' ";
 
-    $query_run = mysqli_query($db, $query);
+    $query_run = mysqli_query($db, $query)or die(mysqli_error($db));;
 
     if($query_run)
     {

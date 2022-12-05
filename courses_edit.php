@@ -116,6 +116,7 @@ if (!$db) {
                                     <input type="text" name="crsInstructor" value="<?=$course['crsInstructor'];?>" class="form-control">
                                 </div>
                                 <div class="mb-3">
+
                                     <label>Price</label>
                                     <input type="text" name="crsPrice" value="<?=$course['crsPrice'];?>" class="form-control">
                                 </div>
