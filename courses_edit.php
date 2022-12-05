@@ -107,9 +107,11 @@ if (!$db) {
                                     <label>Course ID</label>
                                     <input type="text" name="crsID" value="<?=$course['crsID'];?>" class="form-control">
                                 </div>
+                                <div class="mb-3">
                                     <label>Course Name</label>
                                     <input type="text" name="crsName" value="<?=$course['crsName'];?>" class="form-control">
                                 </div>
+                                <div class="mb-3">
                                     <label>Instructor</label>
                                     <input type="text" name="crsInstructor" value="<?=$course['crsInstructor'];?>" class="form-control">
                                 </div>

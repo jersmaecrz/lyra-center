@@ -102,11 +102,11 @@ if (!$db) {
                                 <label>Price</label>
                                 <input type="text" name="crsPrice" class="form-control">
                             </div>
-                            </div>
+                            <div class="mb-3">
                                 <label>Instructor</label>
                                 <input type="text" name="crsInstructor" class="form-control">
                             </div>
-                            </div>
+                            <div class="mb-3">
                                 <label>Description</label>
                                 <input type="text" name="crsDesc" class="form-control">
                             </div>

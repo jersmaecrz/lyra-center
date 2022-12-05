@@ -40,7 +40,7 @@ if(isset($_POST['update_course']))
     $crsPrice = mysqli_real_escape_string($db, $_POST['crsPrice']);
     $crsDesc = mysqli_real_escape_string($db, $_POST['crsDesc']);
 
-    $query = "UPDATE courses SET crsName ='$crsName', crsInstructor='$crsInstructor', csrPrice='$crsPrice', csrDesc='$crsDesc' WHERE id='$course_id' ";
+    $query = "UPDATE courses SET crsName ='$crsName', crsInstructor='$crsInstructor', csrPrice='$crsPrice', csrDesc='$crsDesc' WHERE id='$crsID' ";
 
     $query_run = mysqli_query($db, $query);
 
