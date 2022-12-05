@@ -17,7 +17,8 @@ if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 	if ($error === 0) {
 		if ($img_size > 12500000) {
 			$em = "Sorry, your file is too large.";
-		    header("Location: sIndex.php?error=$em");
+		    //header("Location: sIndex.php?error=$em");
+			echo "<script>window.location.replace('sIndex.php?error=$em');</script>";
 		}else {
 			$img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
 			$img_ex_lc = strtolower($img_ex);
@@ -40,13 +41,18 @@ if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 			}else {
 				$em = "You can't upload files of this type";
 		        header("Location: sIndex.php?error=$em");
+				echo "<script>window.location.replace('sIndex.php?error=$em');</script>";
 			}
 		}
 	}else {
 		$em = "unknown error occurred!";
-		header("Location: sIndex.php?error=$em");
+		//header("Location: sIndex.php?error=$em");
+		echo "<script>window.location.replace('sIndex.php?error=$em');</script>";
+
 	}
 
 }else {
-	header("Location: sIndex.php");
+	//header("Location: sIndex.php");
+	echo "<script>window.location.replace('sIndex.php');</script>";
+
 }

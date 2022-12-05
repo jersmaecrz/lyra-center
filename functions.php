@@ -59,7 +59,8 @@ function register(){
 					  VALUES('$username', '$email', '$user_type', '$password')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
-			header('location: login.php');
+			//header('location: login.php');
+			echo "<script>window.location.replace('login.php');</script>";
 		}else{
 			$query = "INSERT INTO users (username, email, user_type, password) 
 					  VALUES('$username', '$email', 'user', '$password')";
@@ -67,10 +68,10 @@ function register(){
 
 			// get id of the created user
 			$logged_in_user_id = mysqli_insert_id($db);
-
 			$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
 			$_SESSION['success']  = "You are now logged in";
-			header('location: index.html');				
+			echo "<script>window.location.replace('sIndex.php');</script>";
+			//header('location: index.html');				
 		}
 	}
 }
@@ -115,7 +116,9 @@ function isLoggedIn()
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['user']);
-	header("location: login.php");
+	//header("location: login.php");
+	echo "<script>window.location.replace('login.php');</script>";
+
 }
 
 // call the login() function if register_btn is clicked
@@ -153,12 +156,16 @@ function login(){
 				$_SESSION['username'] = $username;
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: aHome.php');		  
+				//header('location: aHome.php');	
+				echo "<script>window.location.replace('aHome.php');</script>";
+	  
 			}else{
 				$_SESSION['username'] = $username;
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: sIndex.php');
+				//header('location: sIndex.php');
+				echo "<script>window.location.replace('sIndex.php');</script>";
+
 			}
 		}else {
 			array_push($errors, "Wrong username/password combination");

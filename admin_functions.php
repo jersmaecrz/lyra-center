@@ -21,13 +21,19 @@ if(isset($_POST['deleteCourse']) && isset($_POST['crsID'])){
     if($query_run)
     {
         $_SESSION['message'] = "Course Deleted Successfully";
-        header("Location: aCourses.php");
+        echo "<script>
+                window.location.replace('aCourses.php');
+            </script>";
+        //header("Location: aCourses.php");
         exit(0);
     }
     else
     {
         $_SESSION['message'] = "Course Not Deleted";
-        header("Location: aCourses.php");
+        echo "<script>
+                window.location.replace('aCourses.php');
+            </script>";
+        //header("Location: aCourses.php");
         exit(0);
     }
 }
@@ -53,12 +59,18 @@ if(isset($_POST['update_course']))
     if($query_run)
     {
         $_SESSION['message'] = "Course Updated Successfully";
-        header("Location: aCourses.php");
+        echo "<script>
+                window.location.replace('aCourses.php');
+             </script>";
+        //header("Location: aCourses.php");
         exit(0);
     }
     else{
         $_SESSION['message'] = "Course Not Updated";
-        header("Location: aCourses.php");
+        echo "<script>
+        window.location.replace('aCourses.php');
+         </script>";
+        //header("Location: aCourses.php");
         exit(0);
     }
 }
@@ -79,12 +91,18 @@ if(isset($_POST['save_course']))
     if($query_run)
     {
         $_SESSION['message'] = "Course Added Successfully";
-        header("Location: aCourses.php");
+        //header("Location: aCourses.php");
+        echo "<script>
+            window.location.replace('aCourses.php');
+        </script>";
         exit(0);
     }
     else{
         $_SESSION['message'] = "Course Not Added";
-        header("Location: aCourses.php");
+        //header("Location: aCourses.php");
+        echo "<script>
+        window.location.replace('aCourses.php');
+        </script>";
         exit(0);
     }
 
