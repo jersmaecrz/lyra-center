@@ -133,20 +133,12 @@
                 </tbody>
             </table>
                 <?php //UPDATE! load uploaded Image  
-                try{
-                    foreach($img as $i){
-
+                    if ($img[0] -> image_url !== '' OR ($img[0] -> image_url !== null){
                         echo "<h3>Proof of Payment</h3>";
-                        echo " <img src='./uploads/".$i -> image_url."'></img>";
+                        echo " <img src='./uploads/".$img[0] -> image_url."'></img>";
+                    
+
                     }
-
-                }catch(Exception $e){
-
-                }
-                       
-                    
-
-                    
                     }
                     }
                 ?>

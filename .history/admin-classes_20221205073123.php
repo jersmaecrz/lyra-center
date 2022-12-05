@@ -80,7 +80,7 @@
         }
         function retrieveStudentCourses($pdo){
             $id = $this-> getStudentUsername();
-            $query = "SELECT * FROM `enrolled courses` JOIN `courses`  ON `enrolled courses`.`crsID` = `courses`.`crsID`  WHERE `sUsername` = ?";
+            $query = "SELECT * FROM `enrolled courses` WHERE `sUsername` = ?";
             $stmt = $pdo-> prepare($query);
             $stmt -> execute([$id]);
             $rows = $stmt -> fetchAll();
@@ -106,35 +106,20 @@
     class StudentPayment {
         //Attributes
         public $payments;
-        public $paymentImage;
-
         //Create setter
         function setPayments($payments){
             $this -> payments = $payments;
-        }
-        function setPaymentImage($paymentImage){
-            $this -> paymentImage = $paymentImage;
         }
         //Create getter
         function getPayments(){
             return $this -> payments;
         }
-        function getPaymentImage(){
-            return $this -> paymentImage;
-        }
-        function retrieveStudentPayments($pdo, $pytID){
-            $query = "SELECT * FROM `payment` WHERE `pytID` = ?";
+        function retrieveStudentPayments($pdo, $ecID){
+            $query = "SELECT * FROM `payment` WHERE `ecID` = ?";
             $stmt = $pdo-> prepare($query);
-            $stmt -> execute([$pytID]);
+            $stmt -> execute([$ecID]);
             $rows = $stmt -> fetchAll();
             $this -> setPayments($rows);
-        }
-        function retrieveImage($pdo, $pytID){
-            $query = "SELECT * FROM `images` WHERE `pytID` = ?";
-            $stmt = $pdo-> prepare($query);
-            $stmt -> execute([$pytID]);
-            $rows = $stmt -> fetchAll();
-            $this -> setPaymentImage($rows);
         }
     }        
 ?>

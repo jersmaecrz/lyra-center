@@ -120,7 +120,7 @@
             return $this -> payments;
         }
         function getPaymentImage(){
-            return $this -> paymentImage;
+            return $this -> payments;
         }
         function retrieveStudentPayments($pdo, $pytID){
             $query = "SELECT * FROM `payment` WHERE `pytID` = ?";
@@ -134,7 +134,7 @@
             $stmt = $pdo-> prepare($query);
             $stmt -> execute([$pytID]);
             $rows = $stmt -> fetchAll();
-            $this -> setPaymentImage($rows);
+            $this -> setPayments($rows);
         }
     }        
 ?>

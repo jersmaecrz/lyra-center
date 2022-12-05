@@ -134,7 +134,7 @@
             $stmt = $pdo-> prepare($query);
             $stmt -> execute([$pytID]);
             $rows = $stmt -> fetchAll();
-            $this -> setPaymentImage($rows);
+            $this -> setPayments($rows);
         }
     }        
 ?>

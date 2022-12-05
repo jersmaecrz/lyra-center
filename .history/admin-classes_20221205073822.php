@@ -112,15 +112,9 @@
         function setPayments($payments){
             $this -> payments = $payments;
         }
-        function setPaymentImage($paymentImage){
-            $this -> paymentImage = $paymentImage;
-        }
         //Create getter
         function getPayments(){
             return $this -> payments;
-        }
-        function getPaymentImage(){
-            return $this -> paymentImage;
         }
         function retrieveStudentPayments($pdo, $pytID){
             $query = "SELECT * FROM `payment` WHERE `pytID` = ?";
@@ -134,7 +128,7 @@
             $stmt = $pdo-> prepare($query);
             $stmt -> execute([$pytID]);
             $rows = $stmt -> fetchAll();
-            $this -> setPaymentImage($rows);
+            $this -> setPayments($rows);
         }
     }        
 ?>

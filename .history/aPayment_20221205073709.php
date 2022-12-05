@@ -106,11 +106,8 @@
                     $sPayment = new StudentPayment();
                     if(isset($_GET['payID'])){
                         $payID = $_GET['payID'];
-                        $sPayment -> retrieveStudentPayments($pdo,$payID);
+                        $sPayment -> retrieveStudentPayments($pdo,$ecID);
                         $rows = $sPayment -> getPayments();
-                        
-                        $sPayment -> retrieveImage($pdo,$payID);
-                        $img =  $sPayment -> getPaymentImage();
                 ?>
                 <thead>
                     <th>Payment ID</th>
@@ -133,21 +130,9 @@
                 </tbody>
             </table>
                 <?php //UPDATE! load uploaded Image  
-                try{
-                    foreach($img as $i){
-
                         echo "<h3>Proof of Payment</h3>";
-                        echo " <img src='./uploads/".$i -> image_url."'></img>";
-                    }
-
-                }catch(Exception $e){
-
-                }
-                       
-                    
-
-                    
-                    }
+                        echo " <img src='./img/banner.png'></img>";
+                        }
                     }
                 ?>
            </div>

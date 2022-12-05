@@ -1,7 +1,6 @@
 <?php
     include "admin-classes.php";
     include "session_checker.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -12,7 +11,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lyra | Payment Details</title>
+    <title>Lyra | Enrolled Courses</title>
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 
     <!-- Google Font -->
@@ -56,11 +55,12 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                            <li ><a href="./aHome.php">HOME</a></li>
-                                <li  ><a href="./aCourses.php">COURSES</a></li>
+                                
+                                <li ><a href="./aHome.php">HOME</a></li>
+                                <li ><a href="./aCourses.php">COURSES</a></li>
                                 <li class="active"><a href="./aStudents.php">STUDENTS</a></li>
-                                <li ><a href="./payschemes.php">PAY SCHEME</a></li>
-                                <li ><a href="./logout.php"> <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                                <li ><a href="">PAY SCHEME</a></li>
+                                <li class="right"><a href="./signup.html">LOGOUT <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -79,7 +79,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="banner-text normal__breadcrumb__text">
-                        <h2></i> Payment Details</h2>
+                        <h2></i> Enrolled Courses</h2>
                             <?php
                                 if(isset($_GET['uname'])){
                                     echo "<div class='lemony'><a><span><b>";
@@ -101,56 +101,66 @@
 <div class="container">
     <div class="row">
         <div class="normal__breadcrumb__text" style="float:none;margin:auto;">
-           <table class="styled-table center"">
-                <?php
-                    $sPayment = new StudentPayment();
-                    if(isset($_GET['payID'])){
-                        $payID = $_GET['payID'];
-                        $sPayment -> retrieveStudentPayments($pdo,$payID);
-                        $rows = $sPayment -> getPayments();
-                        
-                        $sPayment -> retrieveImage($pdo,$payID);
-                        $img =  $sPayment -> getPaymentImage();
-                ?>
+            <table class="styled-table">
                 <thead>
-                    <th>Payment ID</th>
+                    <tr>
+                        <th>Course</th>
+                        <th>Name</th>
+                        <th>Instructor</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th></th>
+                        <th>Payment</th>
+
+                    </tr>
                 </thead>
                 <tbody>
-                <?php
-                        foreach($rows as $row){
-                            echo " <td>".$row -> pytID."</td>";
-                ?>
-                </tbody>
-           </table>   
-           <table class="styled-table"">
-                <thead>
-                    <th>Enrolled Course ID</th>
-                </thead>
-                <tbody>                    
-                <?php            
-                            echo " <td>".$row -> ecID."</td>";
-                ?>
+                    <?php
+                        $studentCourse = new StudentCourse();
+                        if(isset($_GET['uname'])){
+                            $uname = $_GET['uname'];
+                            $studentCourse -> setStudentUsername($uname);
+                            $studentCourse -> retrieveStudentCourses($pdo);
+                            $rows = $studentCourse -> getCourses();
+                            foreach($rows as $row){
+                                echo "<tr>";
+                                echo "<td>".$row -> crsID."</td>";
+                                echo "<td>".$row -> crsName."</td>";
+                                echo "<td>".$row -> crsInstructor."</td>";
+                                echo "<td>".$row -> crsPrice."</td>";
+                                echo "<td>";
+                                echo "<form action='' method='post'>";
+                                echo "<input type='hidden' name='ecID' value='".$row -> ecID."'>";
+                                echo "<select name='status' required>";
+                                if($row -> ecStatus == 'pending'){
+                                    echo "<option value='pending' selected>Pending</option>";
+                                    echo "<option value='active'>Active</option>";
+                                    echo "<option value='inactive'>Inactive</option>";
+                                }elseif ($row -> ecStatus == 'active'){
+                                    echo "<option value='active' selected>Active</option>";
+                                    echo "<option value='pending'>Pending</option>";
+                                    echo "<option value='inactive'>Inactive</option>";
+                                }else{
+                                    echo "<option value='inactive' selected>Inactive</option>";
+                                    echo "<option value='pending'>Pending</option>";
+                                    echo "<option value='active'>Active</option>";
+                                }
+                                echo "</select></td>";
+                                echo "<td><input type='submit' value='SAVE' class='save-button' name='btnSubmit'>"; 
+                                echo "</form></td>";
+                                echo "<td><a  class='save-button btnLink' href='aPayment.php?ecID=".filter_var($row -> ecID)."&payID=".filter_var($row -> ecID)."'>VIEW"."</a></td>";
+                                echo "</tr>";
+                            }        
+                        }  
+                        if(isset($_POST['btnSubmit']) && isset($_POST['status']) && isset($_POST['ecID'])){
+                            $status = $_POST['status'];
+                            $ecID = $_POST['ecID'];
+                            $studentCourse -> updateEnrollmentStatus($pdo,$ecID,$status);
+                        }                              
+                    ?>
+
                 </tbody>
             </table>
-                <?php //UPDATE! load uploaded Image  
-                try{
-                    foreach($img as $i){
-
-                        echo "<h3>Proof of Payment</h3>";
-                        echo " <img src='./uploads/".$i -> image_url."'></img>";
-                    }
-
-                }catch(Exception $e){
-
-                }
-                       
-                    
-
-                    
-                    }
-                    }
-                ?>
-           </div>
         </div>
     </div>
 </div>
